@@ -1,0 +1,164 @@
+1. Xampp install
+2. composer install
+3. vs code install
+4. git install
+5. enter project directory
+6. Laravel install.
+7. composer update.
+8. MySQL database access in .env file
+9. php artisan serve
+10.php artisan make:model Admin -a
+11.php artisan migrate 
+
+sudo apt install php8.3 -y
+
+sudo apt install php8.1 php8.1-curl libapache2-mod-php8.1 php8.1-bcmath php8.1-zip php8.1-mbstring php8.1-mysql php8.1-gd php8.1-xml php8.1-tokenizer php-common php-json
+
+sudo apt install php8.3 php8.3-curl libapache2-mod-php8.3 php8.3-bcmath php8.3-zip php8.3-mbstring php8.3-mysql php8.3-gd php8.3-xml php8.3-tokenizer php-common php-json
+
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb
+
+sudo apt update
+sudo apt install php-cli unzip
+git remote add origin https://github.com/Debduttadev/saaggifo.git
+git remote set-url origin https://github.com/Debduttadev/saaggifo.git
+
+git remote add origin https://github.com/Debduttadev/astropanditdevdutt.git
+git remote set-url origin https://github.com/Debduttadev/astropanditdevdutt.git
+
+sudo git clone https://github.com/Debduttadev/Astrodev.git
+
+sudo git clone https://github.com/Debduttadev/saaggifo.git
+cd Astrodev
+git pull origin main
+
+git config --global user.name Debduttadev
+git config --global user.email Kaupia@yahoo.com
+cd..
+
+sudo chown -R www-data:www-data Astrodev
+sudo chmod -R 755 Astrodev
+sudo mv Astrodev /var/www/html
+
+cd astroachariyadebdutta.com
+rm -rf Astrodev
+
+to delete everything
+sudo rm -R /var/www/wordpress/wp-content/themes/myFolder/*
+
+sudo cp 000-default.conf astroachariya.conf
+sudo nano astroachariya.conf
+sudo a2ensite astroachariya.conf
+
+<VirtualHost *:80>
+    ServerAdmin admin@astroachariyadebdutta.com
+    ServerName astroachariyadebdutta.com
+    DocumentRoot /var/www/html/Astrodev/public/
+     
+    <Directory /var/www/html/Astrodev/public/>
+            AllowOverride All
+            Require all granted
+            Allow from all
+    </Directory>
+     
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+sudo a2ensite astroachariya.conf
+
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'mysql_root_password';"
+
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED  WITH caching_sha2_password BY 'Astro#achariya1235';"
+
+ sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED  WITH caching_sha2_password BY 'Saaggifo#server@12345';"
+
+mysql -u root -p 
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Astro#achariya1235';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Saaggifo#server@12345';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE astrodeb
+CREATE DATABASE Saaggifodb
+
+
+http://43.205.231.33/
+
+oldhttp://3.110.187.108/
+
+sudo chown www-data:www-data /var/www/html/Astrodev/storage/logs/laravel.log
+
+sudo chmod 755 /var/www/html/Astrodev/storage/logs/laravel.log
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('Saaggifo#server@12345')
+
+sudo chmod 777 -R /var/www/html/Astrodev
+sudo chown -R www-data storage
+sudo chown -R www-data storage/framework
+sudo chmod g+w -R storage
+sudo chmod g+w -R storage/framework
+sudo chmod g+w -R storage/framework/sessions/
+sudo chmod g+w -R storage/logs/
+sudo chown -R www-data public/sitemap/
+sudo chown -R www-data public/front/doc/
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+
+
+
+35.154.60.132 alocaded ip
+
+Redirect / https://www.astroachariyadebdutta.com
+
+NameVirtualHost *:80
+<VirtualHost *:80>
+   ServerName astroachariyadebdutta.com
+   Redirect permanent / https://www.astroachariyadebdutta.com
+</VirtualHost>
+
+<VirtualHost _default_:443>
+   ServerName astroachariyadebdutta.com
+  DocumentRoot /var/www/html/Astrodev/public/
+  SSLEngine On
+ # etc...
+</VirtualHost>
+
+<VirtualHost *:80>
+   ServerName www.astroachariyadebdutta.com
+   Redirect / https://www.astroachariyadebdutta.com
+</VirtualHost>
+<VirtualHost _default_:443>
+   ServerName www.astroachariyadebdutta.com
+   DocumentRoot /usr/local/apache2/htdocs
+   SSLEngine On
+   # Configuration Continues...
+</VirtualHost>
+
+Redirect permanent / https://www.astroachariyadebdutta.com
+
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =https://www.astroachariyadebdutta.com
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+
+php artisan make:migration add_nameurl_to_services_table --table=services
+
+php artisan make:migration add_nameurl_to_blogs_table --table=blogs
+
+USE astrodeb
+DELETE FROM keywords WHERE keyword='भोलू'
+
+
+//env file details
+APP_NAME=Astroachariyadebdutta
+APP_ENV=local
+APP_KEY=base64:KfTNsl03XNLcqpgS9BTt1IipJQquetbXqbrQYMAaP5Q=
+APP_DEBUG=false
+APP_TIMEZONE=UTC
+APP_URL=http://43.205.231.33/
+
+ALTER TABLE invoices DROP COLUMN 'utr';
+use astrodeb
+
+
+php artisan route:cache
